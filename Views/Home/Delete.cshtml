@@ -1,0 +1,43 @@
+﻿@model Employee
+
+<h2>Delete Employee</h2>
+
+<div>
+    <h4>Employee Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecordCreatedOn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecordCreatedOn)
+        </dd>
+    </dl>
+    <form method="post" asp-action="DeleteConfirmed">
+        <input asp-for="Id" type="hidden" />
+        <!-- Display employee details here -->
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
